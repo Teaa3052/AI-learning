@@ -1,41 +1,80 @@
-from data import students 
 from data import numbers
-from student_analysis import average_grade, best_student, students_above_average, worst_student, grade_distribution, student_names
-from student_analysis import num_x2, numx2, even_numbers, plusOne, square_numbers
+from student_analysis import (
+    average_grade,
+    best_student,
+    students_above_average,
+    worst_student,
+    grade_distribution,
+    student_names,
+    numbers_x2,
+    numbers_x2_dict,
+    even_numbers,
+    plus_one,
+    square_numbers
+)
+
+import json
+
+
+# =========================
+# Load students
+# =========================
+
+with open("students.json", "r") as file:
+    students = json.load(file)
+
+
+# =========================
+# Student analysis
+# =========================
+
+print("Student names:", student_names(students))
 
 average = average_grade(students)
-print(average)
+print("Average grade:", average)
 
 best = best_student(students)
-print(best)
+print("Best student:", best)
 
 above_average_students = students_above_average(students)
-print(above_average_students)
+print("Students above average:", above_average_students)
 
 worst = worst_student(students)
-print(worst["name"])
+print("Worst student:", worst["name"])
 
 distribution = grade_distribution(students)
-print(distribution)
+print("Grade distribution:", distribution)
 
-list_of_numbers = num_x2(numbers)
-print(list_of_numbers)
 
-dictionary_of_nums = numx2(numbers)
-print(dictionary_of_nums)
+# =========================
+# Update students
+# =========================
+
+new_student = {
+    "name": "Petra",
+    "grade": 5
+}
+
+students.append(new_student)
+
+with open("students_updated.json", "w") as file:
+    json.dump(students, file, indent=4)
+
+
+# =========================
+# List practice
+# =========================
+
+print("Numbers x2:", numbers_x2(numbers))
+
+print("Numbers x2 dictionary:", numbers_x2_dict(numbers))
+
+print("Even numbers:", even_numbers(numbers))
+
+print("Numbers +1:", plus_one(numbers))
+
+print("Squared numbers:", square_numbers(numbers))
 
 ### što šaljem funkciji? 
 ### što funkcija vraća? (return)
 ### što zapravo ispisujem? 
-
-list_of_names = student_names(students)
-print(list_of_names)
-
-list_of_even = even_numbers(numbers)
-print(list_of_numbers)
-
-addOne = plusOne(numbers)
-print(addOne)
-
-squareNumbers = square_numbers(numbers)
-print (squareNumbers)
