@@ -57,7 +57,7 @@ PDF se radi tek kad je provjera znanja (`*_check.py`) gotova, jer pregled opisuj
 - [x] Boolean maske, `any`, `argmax`, udjeli
 - [x] Provjera znanja: `numpy_check.py`
 - [x] **PDF 01:** `numpy_python_pregled.pdf`
-- [ ] Ponoviti broadcasting: zašto `scores - scores.mean(axis=1)` ne radi i kako to popraviti (`keepdims=True` ili `[:, None]`)
+- [x] Ponoviti broadcasting: zašto `scores - scores.mean(axis=1)` ne radi i kako to popraviti (`keepdims=True` ili `[:, None]`)
 
 NumPy je dovoljan za sada. Pandas preskačemo i vraćamo mu se samo ako zatreba u projektu.
 
